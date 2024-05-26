@@ -83,6 +83,7 @@ def font(request):
         request.session['font'] = True
     return redirect(request.META.get('HTTP_REFERER'))
 
+
 @login_required(login_url='login')
 def add_to_cart(request):
     if request.method == 'POST':
@@ -99,6 +100,23 @@ def add_to_cart(request):
             )
             n_cart.save()
         return redirect('product', product_id)
+
+
+@login_required(login_url='login')
+def remove_from_cart(request, id):
+    user = request.user
+    try:
+        cart = Cart.objects.get(user=user)
+        print(cart.product_ids)
+        cart.product_ids = cart.product_ids\
+            .replace(f' {id} ', ' ')\
+            .replace(f'{id}', '')\
+            .replace(f' {id}', '')
+        print(cart.product_ids)
+        cart.save()
+    except Cart.DoesNotExist:
+        return redirect('cart')
+    return redirect('cart')
 
 
 def search(request):
