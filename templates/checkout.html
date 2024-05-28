@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Cristal | Checkout</title>
+    <title>Cristal | Оформить заказ</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
@@ -37,7 +37,7 @@
                     <div class="search-content">
                         <form action="{% url 'search' %}" method="post">
                             {% csrf_token %}
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <input type="search" name="search" id="search" placeholder="Введите ключевое слово...">
                             <button type="submit"><img src="{% static 'img/core-img/search.png' %}" alt=""></button>
                         </form>
                     </div>
@@ -75,8 +75,8 @@
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                    <li><a href="{% url 'index' %}">ГЛАВНАЯ</a></li>
+                    <li><a href="{% url 'cart' %}">КОРЗИНА</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -84,20 +84,20 @@
                 {% if user %}
                     <a href="#" class="btn amado-btn mb-15">{{ user.first_name }}</a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn amado-btn mb-15">Log In</a>
+                    <a href="{% url 'login' %}" class="btn amado-btn mb-15">ВОЙТИ</a>
                 {% endif %}
-                <a href="{% url 'logout' %}" class="btn amado-btn active">Log Out</a>
+                <a href="{% url 'logout' %}" class="btn amado-btn active">ВЫЙТИ</a>
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="{% url 'cart' %}" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> Cart</a>
-                <a href="#" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> Search</a>
+                
+                <a href="#" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> ПОИСК</a>
                 {% if request.session.dark %}
-                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> Light </a>
+                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> СВЕТЛАЯ ТЕМА </a>
                 {% else %}
-                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> Dark </a>
+                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> ТЕМНАЯ ТЕМА </a>
                 {% endif %}
-                <a href="{% url 'font' %}" class="cart-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> Big font </a>
+                <a href="{% url 'font' %}" class="cart-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> БОЛЬШОЙ ШРИФТ </a>
             </div>
             <!-- Social Button -->
             <div class="social-info d-flex justify-content-between">
@@ -114,7 +114,7 @@
                         <div class="checkout_details_area mt-50 clearfix">
 
                             <div class="cart-title">
-                                <h2>Checkout</h2>
+                                <h2>Оформить заказ</h2>
                             </div>
 
                             <form method="post">
@@ -130,40 +130,41 @@
                                         <input type="text" class="form-control" name="company" placeholder="Company Name" value="">
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="email" class="form-control" name="email" placeholder="Email" value="{{ user.username }}">
+                                        <input type="email" class="form-control" name="email" placeholder="Почта" value="{{ user.username }}">
                                     </div>
                                     <div class="col-12 mb-3">
                                         <select class="w-100" name="country">
-                                        <option value="usa">United States</option>
-                                        <option value="uk">United Kingdom</option>
-                                        <option value="ger">Germany</option>
-                                        <option value="fra">France</option>
-                                        <option value="ind">India</option>
-                                        <option value="aus">Australia</option>
-                                        <option value="bra">Brazil</option>
-                                        <option value="cana">Canada</option>
-                                    </select>
+                                            <option value="usa">Российская Федерация</option>
+                                            <option value="uk">Республика Беларусь</option>
+                                            <option value="ger">Азербайджан</option>
+                                            <option value="fra">Таджикистан</option>
+                                            <option value="ind">Киргизия</option>
+                                            <option value="aus">Армения</option>
+                                            <option value="bra">Казахстан</option>
+                                            <option value="cana">Туркмения</option>
+                                            <option value="cana">Молдавия</option>
+                                        </select>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="text" class="form-control mb-3" name="street_address" placeholder="Address" value="">
+                                        <input type="text" class="form-control mb-3" name="street_address" placeholder="Адрес" value="">
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="text" class="form-control" name="city" placeholder="Town" value="">
+                                        <input type="text" class="form-control" name="city" placeholder="Город" value="">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" name="zipCode" placeholder="Zip Code" value="">
+                                        <input type="text" class="form-control" name="zipCode" placeholder="Почтовый индекс" value="">
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="number" class="form-control" name="phone_number" min="0" placeholder="Phone No" value="">
+                                        <input type="number" class="form-control" name="phone_number" min="0" placeholder="Номер телефона" value="">
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="Leave a comment about your order"></textarea>
+                                        <textarea name="comment" class="form-control w-100" id="comment" cols="30" rows="10" placeholder="Оставить комментарий к заказу"></textarea>
                                     </div>
 
                                     <div class="col-12">
                                         <div class="custom-control custom-checkbox d-block">
                                             <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                            <label class="custom-control-label" for="customCheck3">Ship to a different address</label>
+                                            <label class="custom-control-label" for="customCheck3">Отправить по другому адресу</label>
                                         </div>
                                     </div>
                                 </div>
@@ -171,28 +172,28 @@
                         </div>
                         <div class="col-12 col-lg-4">
                             <div class="cart-summary">
-                                <h5>Cart Total</h5>
+                                <h5>Заказ</h5>
                                 <ul class="summary-table">
-                                    <li><span>subtotal:</span> <span>${{ cart.get_full_price }}</span></li>
-                                    <li><span>delivery:</span> <span>Free</span></li>
-                                    <li><span>total:</span> <span>${{ cart.get_full_price }}</span></li>
+                                    <li><span>Сумма:</span> <span>${{ cart.get_full_price }}</span></li>
+                                    <li><span>Доставка:</span> <span>Бесплатно</span></li>
+                                    <li><span>Итог:</span> <span>${{ cart.get_full_price }}</span></li>
                                 </ul>
 
                                 <div class="payment-method">
                                     <!-- Cash on delivery -->
                                     <div class="custom-control custom-checkbox mr-sm-2">
                                         <input type="checkbox" class="custom-control-input" id="cod" checked>
-                                        <label class="custom-control-label" for="cod">Cash on Delivery</label>
+                                        <label class="custom-control-label" for="cod">Наличными курьеру</label>
                                     </div>
                                     <!-- Paypal -->
                                     <div class="custom-control custom-checkbox mr-sm-2">
                                         <input type="checkbox" class="custom-control-input" id="paypal">
-                                        <label class="custom-control-label" for="paypal">Paypal <img class="ml-15" src="{% static 'img/core-img/paypal.png' %}" alt=""></label>
+                                        <label class="custom-control-label" for="paypal">Картой <img class="ml-15" src="{% static 'img/core-img/paypal.png' %}" alt=""></label>
                                     </div>
                                 </div>
 
                                 <div class="cart-btn mt-100">
-                                    <button type="submit" class="btn amado-btn w-100">Checkout</button>
+                                    <button type="submit" class="btn amado-btn w-100">Оформить заказ</button>
                                 </div>
                             </div>
                         </div>

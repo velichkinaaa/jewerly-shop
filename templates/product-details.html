@@ -37,7 +37,7 @@
                     <div class="search-content">
                         <form action="{% url 'search' %}" method="post">
                             {% csrf_token %}
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <input type="search" name="search" id="search" placeholder="Введите ключевое слово...">
                             <button type="submit"><img src="{% static 'img/core-img/search.png' %}" alt=""></button>
                         </form>
                     </div>
@@ -75,8 +75,8 @@
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="{% url 'cart' %}">Cart</a></li>
+                    <li><a href="{% url 'index' %}">ГЛАВНАЯ</a></li>
+                    <li><a href="{% url 'cart' %}">КОРЗИНА</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -86,18 +86,18 @@
                 {% else %}
                     <a href="{% url 'login' %}" class="btn amado-btn mb-15">Log In</a>
                 {% endif %}
-                <a href="{% url 'logout' %}" class="btn amado-btn active">Log Out</a>
+                <a href="{% url 'logout' %}" class="btn amado-btn active">ВЫЙТИ</a>
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
-                <a href="{% url 'cart' %}" class="cart-nav"><img src="{% static 'img/core-img/cart.png' %}" alt=""> Cart</a>
-                <a href="#" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> Search</a>
+                
+                <a href="#" class="search-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> ПОИСК</a>
                 {% if request.session.dark %}
-                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> Light </a>
+                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> СВЕТЛАЯ ТЕМА </a>
                 {% else %}
-                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> Dark </a>
+                    <a href="{% url 'dark' %}" class="cart-nav"><img src="{% static 'img/core-img/favorites.png' %}" alt=""> ТЕМНАЯ ТЕМА </a>
                 {% endif %}
-                <a href="{% url 'font' %}" class="cart-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> Big font </a>
+                <a href="{% url 'font' %}" class="cart-nav"><img src="{% static 'img/core-img/search.png' %}" alt=""> БОЛЬШОЙ ШРИФТ </a>
             </div>
             <!-- Social Button -->
             <div class="social-info d-flex justify-content-between">
@@ -159,7 +159,7 @@
                                     </div>
                                 </div>
                                 <!-- Avaiable -->
-                                <p class="avaibility"><i class="fa fa-circle"></i> In Stock</p>
+                                <p class="avaibility"><i class="fa fa-circle"></i> В наличии</p>
                             </div>
 
                             <div class="short_overview my-5">
@@ -170,7 +170,7 @@
                             <form class="cart clearfix" method="post" action="{% url 'add-to-cart' %}">
                                 {% csrf_token %}
                                 <input type="hidden" value="{{ product.id }}" name="product_id">
-                                <button type="submit" name="addtocart" value="5" class="btn amado-btn">Add to cart</button>
+                                <button type="submit" name="addtocart" value="5" class="btn amado-btn">Добавить в корзину</button>
                             </form>
 
                         </div>

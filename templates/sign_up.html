@@ -10,7 +10,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>Cristal | Sign Up</title>
+    <title>Cristal | Зарегистрироваться</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{% static 'img/core-img/favicon.ico' %}">
@@ -36,7 +36,7 @@
                 <div class="col-12">
                     <div class="search-content">
                         <form action="#" method="get">
-                            <input type="search" name="search" id="search" placeholder="Type your keyword...">
+                            <input type="search" name="search" id="search" placeholder="Введите ключевое слово...">
                             <button type="submit"><img src="{% static 'img/core-img/search.png' %}" alt=""></button>
                         </form>
                     </div>
@@ -74,8 +74,8 @@
             <!-- Amado Nav -->
             <nav class="amado-nav">
                 <ul>
-                    <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="{% url 'index' %}">ГЛАВНАЯ</a></li>
+                    <li><a href="cart.html">КОРЗИНА</a></li>
                 </ul>
             </nav>
             <!-- Button Group -->
@@ -94,27 +94,27 @@
                         <div class="checkout_details_area mt-50 clearfix">
 
                             <div class="cart-title">
-                                <h2>Sign Up</h2>
+                                <h2>Зарегистрироваться</h2>
                             </div>
 
                             <form method="post">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="first_name" name="first_name" value="" placeholder="First Name" required>
+                                        <input type="text" class="form-control" id="first_name" name="first_name" value="" placeholder="Имя" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <input type="text" class="form-control" id="last_name" name="last_name" value="" placeholder="Last Name" required>
+                                        <input type="text" class="form-control" id="last_name" name="last_name" value="" placeholder="Фамилия" required>
                                     </div>
                                     <div class="col-12 mb-3">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Почта" value="">
                                     </div>
                                      <div class="col-12 mb-3">
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" value="">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Пароль" value="">
                                     </div>
                                     <div class="col-12 col-lg-6 col-xl-5">
                                         <div class="newsletter-form mb-100">
-                                            <input type="submit" value="Sign Up">
+                                            <input type="submit" value="Регистрация">
                                         </div>
                                     </div>
                                 </div>
