@@ -84,9 +84,9 @@
                 {% if user %}
                     <a href="#" class="btn amado-btn mb-15">{{ user.first_name }}</a>
                 {% else %}
-                    <a href="{% url 'login' %}" class="btn amado-btn mb-15">Log In</a>
+                    <a href="{% url 'login' %}" class="btn amado-btn mb-15">Войти</a>
                 {% endif %}
-                <a href="{% url 'logout' %}" class="btn amado-btn active">Log Out</a>
+                <a href="{% url 'logout' %}" class="btn amado-btn active">Выйти</a>
             </div>
             <!-- Cart Menu -->
             <div class="cart-fav-search mb-100">
@@ -114,7 +114,7 @@
                         <div class="checkout_details_area mt-50 clearfix">
 
                             <div class="cart-title">
-                                <h2>Your order has been successfully created!</h2>
+                                <h2>Ваш заказ успешно оформлен!</h2>
                             </div>
                 </div>
             </div>
